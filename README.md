@@ -5,9 +5,10 @@ This work was produced under the supervision of Prof. Robert Endres and Prof. Ma
 The full thesis document can be found in PhD_thesis.pdf.
 
 The tutorials can be found in different directories:
+- Algorithms to find steady states
+- Linear stability analysis to study reaction-diffusion PDE systems
 - PDE Numerical solvers in 1D (Crank-Nicolson) and 2D (Alternating implicit direction method)
 - Cellular automata model for bacterial colony growth
-- Linear stability analysis for reaction-diffusion PDE systems
 - Latin hypercube sampling 
 - Code parallelisation
 - High Performance Computing Cluster access

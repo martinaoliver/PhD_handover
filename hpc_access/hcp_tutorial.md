@@ -23,7 +23,7 @@ $ python job.py
 
 Instead, they are sent through .pbs files, which determine the number of cpus, walltime and memory needed. 
 
-An example of a .pbs file to run in python job.py is shown below. The file is called job.pbs 
+An example of a .pbs file to run in python parallelised_job.py is shown below. The file is called parallelised_job.pbs 
 
 
 ```bash
@@ -35,18 +35,18 @@ An example of a .pbs file to run in python job.py is shown below. The file is ca
 cd $PBS_O_WORKDIR
 
 
-python job.py
+python parallelised_job.py
 
 ```
 
-In this case, we have requested 20 minutes, 10 cpus and 96gb memory to run job.py. The higher the walltime, ncpus or mem, the longer the queue for your job to start. 
+In this case, we have requested 20 minutes, 10 cpus and 96gb memory to run parallelised_job.py. The higher the walltime, ncpus or mem, the longer the queue for your job to start. 
 
 
 
 Once the .pbs file is created, we can send it to the cluster where a job with ID x gets queued to run
 
 ```bash
-$ qsub job.pbs
+$ qsub parallelised_job.pbs
 x.pbs
 ```
 To delete the job request, 
@@ -65,8 +65,8 @@ $ qstat -w -T
 
 ```
 
-The job.pbs file sends job.py to run in the cluster cores. The terminal output and the errors of job x are stored in 
-<em>job.pbs.ox</em> and <em>job.pbs.ex</em>.
+The parallelised_job.pbs file sends parallelised_job.py to run in the cluster cores. The terminal output and the errors of job x are stored in 
+<em>parallelised_job.pbs.ox</em> and <em>parallelised_job.pbs.ex</em>.
 They can be visualized with nano or vim in the terminal.
 
 ## Virtual environments
@@ -99,7 +99,7 @@ $ source activate env
 cd $PBS_O_WORKDIR
 
 
-python job.py
+python parallelised_job.py
 
 ```
 
@@ -108,10 +108,10 @@ python job.py
 If a command must be passed to the .pbs file, this is included in the terminal command as 
 
 ```
-$ qsub -v arg1=x,arg2=y job.pbs
+$ qsub -v arg1=x,arg2=y parallelised_job.pbs
 ```
 
-where job.pbs is
+where parallelised_job.pbs is
 
 
 ```bash
@@ -125,7 +125,7 @@ $ source activate env
 cd $PBS_O_WORKDIR
 
 
-python job.py $arg1 $arg2
+python parallelised_job.py $arg1 $arg2
 
 ```
 

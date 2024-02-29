@@ -46,6 +46,13 @@ def my_function(b,c):
 # Run my_function in parallel across different threads
 pool = multiprocessing.Pool(Number_of_Threads)
 pool_output = []
+b=1
+c=2
+
+# if command line arguments needed
+# b=int(sys.argv[2])
+# c=int(sys.argv[3])  
+
 for job in range(Number_of_Threads):
     print('job' + str(job))
     pool_output.append(pool.apply_async(my_function, args=(b,c)))

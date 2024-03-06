@@ -27,15 +27,19 @@ An example of a .pbs file to run in python parallelised_job.py is shown below. T
 
 
 ```bash
-
 #!/bin/sh
 #PBS -l walltime=00:20:00
 #PBS -l select=1:ncpus=10:mem=96gb
 
+
+
+module load anaconda3/personal
+source activate env1
 cd $PBS_O_WORKDIR
 
 
-python parallelised_job.py
+python parallelised_job.py 10
+
 
 ```
 
@@ -99,7 +103,7 @@ $ source activate env
 cd $PBS_O_WORKDIR
 
 
-python parallelised_job.py
+python parallelised_job.py 10
 
 ```
 
@@ -125,7 +129,7 @@ $ source activate env
 cd $PBS_O_WORKDIR
 
 
-python parallelised_job.py $arg1 $arg2
+python parallelised_job.py 10 $arg1 $arg2
 
 ```
 

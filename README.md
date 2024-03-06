@@ -9,6 +9,6 @@ The tutorials can be found in different directories:
 - Linear stability analysis to study reaction-diffusion PDE systems
 - PDE Numerical solvers in 1D (Crank-Nicolson) and 2D (Alternating implicit direction method)
 - Cellular automata model for bacterial colony growth
-- Latin hypercube sampling 
+- Sampling of parameters using latin hypercube sampling
 - Code parallelisation
 - High Performance Computing Cluster access
